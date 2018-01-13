@@ -1,0 +1,22 @@
+h1 My projects
+
+
+a class="btn btn-sm btn-success new_item" href="#{new_project_path}" + Add Project
+
+
+table.table
+  thead
+    tr
+      th Name
+      th Delete
+      th More Options
+      
+
+  tbody
+    - @projects.each do |project|
+      tr
+        td = project.name
+        td = link_to "<span class='btn btn-danger'>Delete</span>".html_safe, project, method: "delete"
+        td = link_to "<span class='btn btn-link'>More</span>".html_safe, project
+
+

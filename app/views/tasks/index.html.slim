@@ -1,0 +1,31 @@
+h1 My tasks
+a class="btn btn-success new_item" href="#{new_task_path}" + Add Task
+
+table.table
+  thead
+    tr
+      th Text
+      th Status
+      th Project
+      th Delete
+      th More Options
+
+  tbody
+    - @tasks.each do |task|
+      tr
+        td = task.text
+        td
+          - if task.status
+            input type="checkbox" disabled="true" checked="checked"
+          - else
+            input type="checkbox" disabled="true" 
+        - if task.project.nil?
+          td None
+        - else
+          td = link_to "#{task.project.name}", task.project
+
+        td = link_to "<span class='btn btn-danger'>Delete</span>".html_safe, task, method: "delete"
+        td = link_to "<span class='btn btn-link'>More</span>".html_safe, task
+
+br
+

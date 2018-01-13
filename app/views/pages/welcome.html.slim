@@ -1,0 +1,8 @@
+h1 Welcome to Super TaskManager
+- if user_signed_in?
+	
+    	 div.main_item <a  href="#{projects_path}">My projects </a>  
+   		 div.main_item <a  href="#{tasks_path}">My tasks</a> 
+    
+- else
+    h4 Please <a href="#{new_user_session_path}">Sign in</a> or <a href="#{new_user_registration_path}">Sign up</a>
