@@ -38,6 +38,13 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'active_model_serializers'
 
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
