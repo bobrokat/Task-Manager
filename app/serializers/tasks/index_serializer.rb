@@ -1,3 +1,4 @@
 class Tasks::IndexSerializer < TaskSerializer
-    attributes :id, :text
+    attributes :id, :text, :status
+    
 end

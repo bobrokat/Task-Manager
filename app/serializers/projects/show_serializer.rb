@@ -4,6 +4,6 @@ class Projects::ShowSerializer < ProjectSerializer
     has_many :tasks, serializer: Tasks::IndexSerializer
 
     def count
-        :tasks.size
+        object.tasks.size
     end
 end

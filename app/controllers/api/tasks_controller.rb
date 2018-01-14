@@ -4,7 +4,7 @@ class Api::TasksController < ApplicationController
   # GET /api/tasks
   # GET /api/tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.where user: current_user
     render json: @tasks, each_serializer: Tasks::IndexSerializer
   end
 

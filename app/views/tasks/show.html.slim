@@ -9,9 +9,9 @@ p
             input type="checkbox" disabled="true" 
 p 
   strong Project:  &nbsp;
-      - if task.project.nil?
-          
-      - else
+  - if @task.project.nil?
+          None
+  - else
          = @task.project.name 
   
 
@@ -27,7 +27,9 @@ h4 Comments
       h5.mb-1 = comment.user.email
     </div>
     p.mb-1 = comment.text
+    = link_to "<span class='btn btn-sm btn-danger'>Delete</span>".html_safe, comment, method: "delete"
   </a>
+   
 </div>
 
         

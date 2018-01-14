@@ -4,7 +4,7 @@ class Api::ProjectsController < ApplicationController
   # GET /api/projects
   # GET /api/projects.json
   def index
-    @projects = Project.all
+    @projects = Project.where user: current_user
     render json: @projects, each_serializer: Projects::IndexSerializer
   end
 

@@ -4,6 +4,6 @@ class Tasks::ShowSerializer < TaskSerializer
     has_many :comments, serializer: Comments::IndexSerializer
 
     def count
-        :comments.size
+        object.comments.size
     end
 end

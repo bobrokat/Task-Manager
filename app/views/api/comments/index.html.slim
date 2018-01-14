@@ -1,0 +1,21 @@
+h1 Listing api_comments
+
+table
+  thead
+    tr
+      th —skip-template-engine
+      th
+      th
+      th
+
+  tbody
+    - @api_comments.each do |api_comment|
+      tr
+        td = api_comment.—skip-template-engine
+        td = link_to 'Show', api_comment
+        td = link_to 'Edit', edit_api_comment_path(api_comment)
+        td = link_to 'Destroy', api_comment, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Comment', new_api_comment_path

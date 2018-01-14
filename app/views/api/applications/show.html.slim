@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong —skip-template-engine:
+  = @api_application.—skip-template-engine
+
+=> link_to 'Edit', edit_api_application_path(@api_application)
+'|
+=< link_to 'Back', api_applications_path

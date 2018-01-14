@@ -19,12 +19,12 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
-    @projects = Project.all
+    @projects = Project.where user: current_user
   end
 
   # GET /tasks/1/edit
   def edit
-    @projects = Project.all
+    @projects = Project.where user: current_user
   end
 
   # POST /tasks
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to :tasks
     else
-      @projects = Project.all
+      @projects = Project.where user: current_user
       render :new
     end
   end

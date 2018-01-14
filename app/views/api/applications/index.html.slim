@@ -1,0 +1,21 @@
+h1 Listing api_applications
+
+table
+  thead
+    tr
+      th —skip-template-engine
+      th
+      th
+      th
+
+  tbody
+    - @api_applications.each do |api_application|
+      tr
+        td = api_application.—skip-template-engine
+        td = link_to 'Show', api_application
+        td = link_to 'Edit', edit_api_application_path(api_application)
+        td = link_to 'Destroy', api_application, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Application', new_api_application_path
